@@ -296,7 +296,7 @@ BOOL CALLBACK EnumAltTabWindows(HWND window, LPARAM lParam) {
     hwnds_alloc += 20;
     hwnds = realloc(hwnds, hwnds_alloc*sizeof(HWND));
   }
-
+  // FIXME: Removing the caption to hide borders probably breaks this
   // Only store window if it's visible, not minimized to taskbar and on the same monitor as the cursor
   if (IsWindowVisible(window) && !IsIconic(window)
    && (GetWindowLongPtr(window,GWL_STYLE)&WS_CAPTION) == WS_CAPTION

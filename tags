@@ -1,0 +1,490 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACTION_ALTTAB	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_ALWAYSONTOP	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_BORDERLESS	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_CENTER	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_CLOSE	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_LOWER	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_MINIMIZE	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_MOVE	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_NONE	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_RESIZE	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_TRANSPARENCY	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+ACTION_VOLUME	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	e	enum:action	file:
+AERO_THRESHOLD	.\hooks.c	33;"	d	file:
+APP_NAME	.\altdrag.c	21;"	d	file:
+APP_NAME	.\hooks.c	32;"	d	file:
+APP_NAME	.\hookwindows_x64.c	21;"	d	file:
+APP_NAME	.\tools\export_l10n_ini.c	19;"	d	file:
+APP_NAME	.\tools\import_languages.c	19;"	d	file:
+APP_URL	.\altdrag.c	23;"	d	file:
+APP_VERSION	.\altdrag.c	22;"	d	file:
+APP_VERSION	.\tools\export_l10n_ini.c	20;"	d	file:
+APP_VERSION	.\tools\import_languages.c	20;"	d	file:
+ARRAY_SIZE	.\altdrag.c	35;"	d	file:
+ARRAY_SIZE	.\hooks.c	36;"	d	file:
+ARRAY_SIZE	.\hookwindows_x64.c	24;"	d	file:
+ARRAY_SIZE	.\tools\export_l10n_ini.c	12;"	d	file:
+ARRAY_SIZE	.\tools\import_languages.c	12;"	d	file:
+ARRAY_SIZE	.\tools\ini.c	15;"	d	file:
+AboutPageDialogProc	.\config\config.c	/^INT_PTR CALLBACK AboutPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+AdvancedPageDialogProc	.\config\config.c	/^INT_PTR CALLBACK AdvancedPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+Aero	.\hooks.c	/^  int Aero;$/;"	m	struct:__anon8	file:
+AutoFocus	.\hooks.c	/^  int AutoFocus;$/;"	m	struct:__anon8	file:
+AutoRemaximize	.\hooks.c	/^  int AutoRemaximize;$/;"	m	struct:__anon8	file:
+AutoSnap	.\hooks.c	/^  int AutoSnap;$/;"	m	struct:__anon8	file:
+BUTTON_LMB	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+BUTTON_MB4	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+BUTTON_MB5	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+BUTTON_MMB	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+BUTTON_NONE	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+BUTTON_RMB	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	e	enum:button	file:
+Blacklist	.\hooks.c	/^  struct blacklist Blacklist;$/;"	m	struct:__anon12	typeref:struct:__anon12::blacklist	file:
+BlacklistPageDialogProc	.\config\config.c	/^INT_PTR CALLBACK BlacklistPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+COBJMACROS	.\hooks.c	13;"	d	file:
+CheckAutostart	.\include\autostart.c	/^void CheckAutostart(int *on, int *hidden, int *elevated) {$/;"	f
+CheckForUpdate	.\include\update.c	/^void CheckForUpdate(int p_verbose) {$/;"	f
+CloseConfig	.\config\config.c	/^void CloseConfig() {$/;"	f
+CloseLog	.\include\error.c	/^void CloseLog(FILE *f) {$/;"	f
+Cursor	.\hooks.c	/^    int Cursor;$/;"	m	struct:__anon8::__anon9	file:
+CursorProc	.\config\config.c	/^LRESULT CALLBACK CursorProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+DBG	.\include\error.c	104;"	d	file:
+DBG	.\include\error.c	95;"	d	file:
+DBGA	.\include\error.c	110;"	d	file:
+DllMain	.\hooks.c	/^BOOL APIENTRY DllMain(HINSTANCE hInst, DWORD reason, LPVOID reserved) {$/;"	f
+ENABLED	.\altdrag.c	36;"	d	file:
+ERROR_WRITETOFILE	.\hooks.c	181;"	d	file:
+Enum	.\hooks.c	/^void Enum() {$/;"	f
+EnumAltTabWindows	.\hooks.c	/^BOOL CALLBACK EnumAltTabWindows(HWND window, LPARAM lParam) {$/;"	f
+EnumMdi	.\hooks.c	/^void EnumMdi() {$/;"	f
+EnumMonitorsProc	.\hooks.c	/^BOOL CALLBACK EnumMonitorsProc(HMONITOR hMonitor, HDC hdcMonitor, LPRECT lprcMonitor, LPARAM dwData) {$/;"	f
+EnumWindowsProc	.\altdrag.c	/^BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam) {$/;"	f
+EnumWindowsProc	.\hooks.c	/^BOOL CALLBACK EnumWindowsProc(HWND window, LPARAM lParam) {$/;"	f
+EnumWindowsProc	.\tools\unhook.c	/^BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam) {$/;"	f
+Error	.\hooks.c	184;"	d	file:
+Error	.\include\error.c	88;"	d	file:
+ErrorMsgProc	.\include\error.c	/^LRESULT CALLBACK ErrorMsgProc(INT nCode, WPARAM wParam, LPARAM lParam) {$/;"	f
+FOCUS_TIMER	.\hooks.c	41;"	d	file:
+FocusOnTyping	.\hooks.c	/^  int FocusOnTyping;$/;"	m	struct:__anon8	file:
+GeneralPageDialogProc	.\config\config.c	/^INT_PTR CALLBACK GeneralPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+GetAction	.\hooks.c	/^int GetAction(int button) {$/;"	f
+HAND	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+HELP_URL	.\tools\export_l10n_ini.c	21;"	d	file:
+HookMouse	.\hooks.c	/^int HookMouse() {$/;"	f
+HookSystem	.\altdrag.c	/^int HookSystem() {$/;"	f
+HookSystem	.\hookwindows_x64.c	/^int HookSystem() {$/;"	f
+Hotkeys	.\hooks.c	/^  } Hotkeys;$/;"	m	struct:__anon8	typeref:struct:__anon8::__anon10	file:
+IDAPPLY	.\config\config.c	14;"	d	file:
+IDC_ABOUT_BOX	.\config\resource.h	71;"	d
+IDC_ADVANCED_BOX	.\config\resource.h	41;"	d
+IDC_AERO	.\config\resource.h	46;"	d
+IDC_AUTHOR	.\config\resource.h	73;"	d
+IDC_AUTOFOCUS	.\config\resource.h	44;"	d
+IDC_AUTOSAVE	.\config\resource.h	23;"	d
+IDC_AUTOSNAP	.\config\resource.h	45;"	d
+IDC_AUTOSNAP_HEADER	.\config\resource.h	12;"	d
+IDC_AUTOSTART	.\config\resource.h	66;"	d
+IDC_AUTOSTART_BOX	.\config\resource.h	43;"	d
+IDC_AUTOSTART_ELEVATE	.\config\resource.h	26;"	d
+IDC_AUTOSTART_HIDE	.\config\resource.h	67;"	d
+IDC_BETA	.\config\resource.h	34;"	d
+IDC_BLACKLIST	.\config\resource.h	64;"	d
+IDC_BLACKLIST_BOX	.\config\resource.h	38;"	d
+IDC_BLACKLIST_EXPLANATION	.\config\resource.h	40;"	d
+IDC_BLACKLIST_HEADER	.\config\resource.h	27;"	d
+IDC_CHECKNOW	.\config\resource.h	14;"	d
+IDC_CHECKONSTARTUP	.\config\resource.h	32;"	d
+IDC_DONATE	.\config\resource.h	62;"	d
+IDC_ELEVATE	.\config\resource.h	28;"	d
+IDC_FINDWINDOW	.\config\resource.h	13;"	d
+IDC_FINDWINDOW_BOX	.\config\resource.h	36;"	d
+IDC_FINDWINDOW_EXPLANATION	.\config\resource.h	70;"	d
+IDC_GENERAL_BOX	.\config\resource.h	42;"	d
+IDC_HOOKWINDOWS	.\config\resource.h	60;"	d
+IDC_HOTKEYS_BOX	.\config\resource.h	69;"	d
+IDC_HOTKEYS_MORE	.\config\resource.h	37;"	d
+IDC_INACTIVESCROLL	.\config\resource.h	47;"	d
+IDC_INI	.\config\resource.h	18;"	d
+IDC_LANGUAGE	.\config\resource.h	48;"	d
+IDC_LANGUAGE_HEADER	.\config\resource.h	15;"	d
+IDC_LEFTALT	.\config\resource.h	54;"	d
+IDC_LEFTCTRL	.\config\resource.h	58;"	d
+IDC_LEFTWINKEY	.\config\resource.h	56;"	d
+IDC_LICENSE	.\config\resource.h	74;"	d
+IDC_LMB	.\config\resource.h	49;"	d
+IDC_LMB_HEADER	.\config\resource.h	29;"	d
+IDC_LOWERWITHMMB	.\config\resource.h	16;"	d
+IDC_MB4	.\config\resource.h	52;"	d
+IDC_MB4_HEADER	.\config\resource.h	33;"	d
+IDC_MB5	.\config\resource.h	53;"	d
+IDC_MB5_HEADER	.\config\resource.h	35;"	d
+IDC_MDI	.\config\resource.h	20;"	d
+IDC_MMB	.\config\resource.h	50;"	d
+IDC_MMB_HEADER	.\config\resource.h	30;"	d
+IDC_MOUSE_BOX	.\config\resource.h	68;"	d
+IDC_NEWRULE	.\config\resource.h	19;"	d
+IDC_OPENINI	.\config\resource.h	61;"	d
+IDC_PROCESSBLACKLIST	.\config\resource.h	65;"	d
+IDC_PROCESSBLACKLIST_HEADER	.\config\resource.h	24;"	d
+IDC_RIGHTALT	.\config\resource.h	55;"	d
+IDC_RIGHTCTRL	.\config\resource.h	59;"	d
+IDC_RIGHTWINKEY	.\config\resource.h	57;"	d
+IDC_RMB	.\config\resource.h	51;"	d
+IDC_RMB_HEADER	.\config\resource.h	31;"	d
+IDC_SCROLL	.\config\resource.h	21;"	d
+IDC_SCROLL_HEADER	.\config\resource.h	25;"	d
+IDC_SNAPLIST	.\config\resource.h	63;"	d
+IDC_SNAPLIST_HEADER	.\config\resource.h	39;"	d
+IDC_STATIC	.\config\resource.h	2;"	d
+IDC_TRANSLATIONS	.\config\resource.h	22;"	d
+IDC_TRANSLATIONS_BOX	.\config\resource.h	17;"	d
+IDC_VERSION	.\config\resource.h	72;"	d
+IDD_ABOUTPAGE	.\config\resource.h	9;"	d
+IDD_ADVANCEDPAGE	.\config\resource.h	8;"	d
+IDD_BLACKLISTPAGE	.\config\resource.h	7;"	d
+IDD_GENERALPAGE	.\config\resource.h	5;"	d
+IDD_INPUTPAGE	.\config\resource.h	6;"	d
+IDI_BIGICON	.\config\resource.h	11;"	d
+IDI_FIND	.\config\resource.h	10;"	d
+INIT_TIMER	.\hooks.c	40;"	d	file:
+InactiveScroll	.\hooks.c	/^  int InactiveScroll;$/;"	m	struct:__anon8	file:
+InitTray	.\include\tray.c	/^int InitTray() {$/;"	f
+InputPageDialogProc	.\config\config.c	/^INT_PTR CALLBACK InputPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+IsHotkey	.\hooks.c	/^int IsHotkey(int key) {$/;"	f
+LMB	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::action	file:
+LinkProc	.\config\config.c	/^void LinkProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+LoadTranslation	.\include\localization.c	/^void LoadTranslation(wchar_t *ini) {$/;"	f
+LowerWithMMB	.\hooks.c	/^  int LowerWithMMB;$/;"	m	struct:__anon8	file:
+MAXKEYS	.\hooks.c	123;"	d	file:
+MB4	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::	file:
+MB5	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::	file:
+MDI	.\hooks.c	/^  int MDI;$/;"	m	struct:__anon8	file:
+MMB	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::	file:
+MOVE_TIMER	.\hooks.c	38;"	d	file:
+Mouse	.\hooks.c	/^  } Mouse;$/;"	m	struct:__anon8	typeref:struct:__anon8::__anon11	file:
+MouseMove	.\hooks.c	/^void MouseMove() {$/;"	f
+MoveRate	.\hooks.c	/^    int MoveRate;$/;"	m	struct:__anon8::__anon9	file:
+MoveSnap	.\hooks.c	/^void MoveSnap(int *posx, int *posy, int wndwidth, int wndheight) {$/;"	f
+NO_STYLE_SAVED	.\hooks.c	42;"	d	file:
+NUMWNDDB	.\hooks.c	55;"	d	file:
+OpenConfig	.\config\config.c	/^void OpenConfig(int startpage) {$/;"	f
+OpenLog	.\include\error.c	/^FILE *OpenLog(wchar_t *mode) {$/;"	f
+OpenUrl	.\include\update.c	/^int OpenUrl(wchar_t *url) {$/;"	f
+Performance	.\hooks.c	/^  } Performance;$/;"	m	struct:__anon8	typeref:struct:__anon8::__anon9	file:
+ProcessBlacklist	.\hooks.c	/^  struct blacklist ProcessBlacklist;$/;"	m	struct:__anon12	typeref:struct:__anon12::blacklist	file:
+PropSheetProc	.\config\config.c	/^BOOL CALLBACK PropSheetProc(HWND hwnd, UINT msg, LPARAM lParam) {$/;"	f
+PropSheetWinProc	.\config\config.c	/^LRESULT CALLBACK PropSheetWinProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData) {$/;"	f
+REHOOK_TIMER	.\hooks.c	39;"	d	file:
+RESIZE_BOTTOM	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESIZE_CENTER	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESIZE_LEFT	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESIZE_NONE	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESIZE_RIGHT	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESIZE_TOP	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	e	enum:resize	file:
+RESTORE_TIMER	.\hooks.c	37;"	d	file:
+RMB	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::	file:
+RemoveTray	.\include\tray.c	/^int RemoveTray() {$/;"	f
+ResizeRate	.\hooks.c	/^    int ResizeRate;$/;"	m	struct:__anon8::__anon9	file:
+ResizeSnap	.\hooks.c	/^void ResizeSnap(int *posx, int *posy, int *wndwidth, int *wndheight) {$/;"	f
+SIZEALL	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+SIZENESW	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+SIZENS	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+SIZENWSE	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+SIZEWE	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	e	enum:cursor	file:
+SWM_ABOUT	.\altdrag.c	31;"	d	file:
+SWM_CONFIG	.\altdrag.c	30;"	d	file:
+SWM_EXIT	.\altdrag.c	32;"	d	file:
+SWM_HIDE	.\altdrag.c	28;"	d	file:
+SWM_TOGGLE	.\altdrag.c	27;"	d	file:
+SWM_UPDATE	.\altdrag.c	29;"	d	file:
+Scroll	.\hooks.c	/^    enum action LMB, MMB, RMB, MB4, MB5, Scroll;$/;"	m	struct:__anon8::__anon11	typeref:enum:__anon8::__anon11::	file:
+SetAutostart	.\include\autostart.c	/^void SetAutostart(int on, int hide, int elevate) {$/;"	f
+ShowContextMenu	.\include\tray.c	/^void ShowContextMenu(HWND hwnd) {$/;"	f
+SnapThreshold	.\hooks.c	/^  int SnapThreshold;$/;"	m	struct:__anon8	file:
+Snaplist	.\hooks.c	/^  struct blacklist Snaplist;$/;"	m	struct:__anon12	typeref:struct:__anon12::blacklist	file:
+ToggleState	.\altdrag.c	/^void ToggleState() {$/;"	f
+UNICODE	.\altdrag.c	10;"	d	file:
+UNICODE	.\hooks.c	10;"	d	file:
+UNICODE	.\hookwindows_x64.c	10;"	d	file:
+UNICODE	.\tools\export_l10n_ini.c	10;"	d	file:
+UNICODE	.\tools\import_languages.c	10;"	d	file:
+UnhookMouse	.\hooks.c	/^int UnhookMouse() {$/;"	f
+UnhookSystem	.\altdrag.c	/^int UnhookSystem() {$/;"	f
+UnhookSystem	.\hookwindows_x64.c	/^int UnhookSystem() {$/;"	f
+UpdateLanguage	.\include\languages.c	/^void UpdateLanguage() {$/;"	f
+UpdateSettings	.\config\config.c	/^void UpdateSettings() {$/;"	f
+UpdateStrings	.\config\config.c	/^void UpdateStrings() {$/;"	f
+UpdateTray	.\include\tray.c	/^int UpdateTray() {$/;"	f
+WM_ADDTRAY	.\altdrag.c	/^UINT WM_ADDTRAY = 0;$/;"	v
+WM_CLOSECONFIG	.\altdrag.c	/^UINT WM_CLOSECONFIG = 0;$/;"	v
+WM_HIDETRAY	.\altdrag.c	/^UINT WM_HIDETRAY = 0;$/;"	v
+WM_OPENCONFIG	.\altdrag.c	/^UINT WM_OPENCONFIG = 0;$/;"	v
+WM_TASKBARCREATED	.\altdrag.c	/^UINT WM_TASKBARCREATED = 0;$/;"	v
+WM_TRAY	.\altdrag.c	26;"	d	file:
+WM_UPDATESETTINGS	.\altdrag.c	/^UINT WM_UPDATESETTINGS = 0;$/;"	v
+WinMain	.\altdrag.c	/^int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, char *szCmdLine, int iCmdShow) {$/;"	f
+WinMain	.\hookwindows_x64.c	/^int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, LPSTR szCmdLine, int iCmdShow) {$/;"	f
+WindowProc	.\altdrag.c	/^LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+WindowProc	.\hooks.c	/^LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+WindowProc	.\hookwindows_x64.c	/^LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {$/;"	f
+_CheckForUpdate	.\include\update.c	/^DWORD WINAPI _CheckForUpdate(LPVOID arg) {$/;"	f
+_Error	.\include\error.c	/^void _Error(wchar_t *func, wchar_t *info, int errorcode, wchar_t *file, int line) {$/;"	f
+_UNICODE	.\altdrag.c	11;"	d	file:
+_UNICODE	.\hooks.c	11;"	d	file:
+_UNICODE	.\hookwindows_x64.c	11;"	d	file:
+_UNICODE	.\tools\export_l10n_ini.c	11;"	d	file:
+_UNICODE	.\tools\import_languages.c	11;"	d	file:
+_WIN32_IE	.\altdrag.c	13;"	d	file:
+_WIN32_IE	.\hookwindows_x64.c	13;"	d	file:
+_WIN32_WINNT	.\altdrag.c	12;"	d	file:
+_WIN32_WINNT	.\hooks.c	12;"	d	file:
+_WIN32_WINNT	.\hookwindows_x64.c	12;"	d	file:
+__declspec	.\hooks.c	/^__declspec(dllexport) LRESULT CALLBACK CallWndProc(int nCode, WPARAM wParam, LPARAM lParam) {$/;"	f
+__declspec	.\hooks.c	/^__declspec(dllexport) LRESULT CALLBACK CustomWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData) {$/;"	f
+__declspec	.\hooks.c	/^__declspec(dllexport) LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {$/;"	f
+__declspec	.\hooks.c	/^__declspec(dllexport) LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {$/;"	f
+__declspec	.\hooks.c	/^__declspec(dllexport) void Unload() {$/;"	f
+about_author	.\localization\strings.h	/^  wchar_t *about_author;$/;"	m	struct:strings
+about_box	.\localization\strings.h	/^  wchar_t *about_box;$/;"	m	struct:strings
+about_donate	.\localization\strings.h	/^  wchar_t *about_donate;$/;"	m	struct:strings
+about_license	.\localization\strings.h	/^  wchar_t *about_license;$/;"	m	struct:strings
+about_translation_credit	.\localization\strings.h	/^  wchar_t *about_translation_credit;$/;"	m	struct:strings
+about_version	.\localization\strings.h	/^  wchar_t *about_version;$/;"	m	struct:strings
+action	.\hooks.c	/^  enum action action;$/;"	m	struct:__anon7	typeref:enum:__anon7::action	file:
+action	.\hooks.c	/^enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_BORDERLESS, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};$/;"	g	file:
+activated	.\hooks.c	/^  short activated; \/\/ Keep track on if an action has begun since the hotkey was depressed, in order to successfully block Alt from triggering a menu$/;"	m	struct:__anon3	file:
+advanced_beta	.\localization\strings.h	/^  wchar_t *advanced_beta;$/;"	m	struct:strings
+advanced_box	.\localization\strings.h	/^  wchar_t *advanced_box;$/;"	m	struct:strings
+advanced_checknow	.\localization\strings.h	/^  wchar_t *advanced_checknow;$/;"	m	struct:strings
+advanced_checkonstartup	.\localization\strings.h	/^  wchar_t *advanced_checkonstartup;$/;"	m	struct:strings
+advanced_hookwindows	.\localization\strings.h	/^  wchar_t *advanced_hookwindows;$/;"	m	struct:strings
+advanced_hookwindows_warn	.\localization\strings.h	/^  wchar_t *advanced_hookwindows_warn;$/;"	m	struct:strings
+advanced_ini	.\localization\strings.h	/^  wchar_t *advanced_ini;$/;"	m	struct:strings
+advanced_openini	.\localization\strings.h	/^  wchar_t *advanced_openini;$/;"	m	struct:strings
+alt	.\hooks.c	/^  short alt;$/;"	m	struct:__anon3	file:
+author	.\localization\strings.h	/^  wchar_t *author;$/;"	m	struct:strings
+beta_update_urls	.\include\update.c	/^const wchar_t const *beta_update_urls[] = {$/;"	v
+blacklist	.\hooks.c	/^struct blacklist {$/;"	s	file:
+blacklist_blacklist	.\localization\strings.h	/^  wchar_t *blacklist_blacklist;$/;"	m	struct:strings
+blacklist_box	.\localization\strings.h	/^  wchar_t *blacklist_box;$/;"	m	struct:strings
+blacklist_explanation	.\localization\strings.h	/^  wchar_t *blacklist_explanation;$/;"	m	struct:strings
+blacklist_findwindow_box	.\localization\strings.h	/^  wchar_t *blacklist_findwindow_box;$/;"	m	struct:strings
+blacklist_findwindow_explanation	.\localization\strings.h	/^  wchar_t *blacklist_findwindow_explanation;$/;"	m	struct:strings
+blacklist_processblacklist	.\localization\strings.h	/^  wchar_t *blacklist_processblacklist;$/;"	m	struct:strings
+blacklist_snaplist	.\localization\strings.h	/^  wchar_t *blacklist_snaplist;$/;"	m	struct:strings
+blacklisted	.\hooks.c	/^int blacklisted(HWND hwnd, struct blacklist *list) {$/;"	f
+blacklistitem	.\hooks.c	/^struct blacklistitem {$/;"	s	file:
+blockaltup	.\hooks.c	/^  short blockaltup;$/;"	m	struct:__anon3	file:
+blockmouseup	.\hooks.c	/^  short blockmouseup;$/;"	m	struct:__anon3	file:
+bottom	.\hooks.c	/^    int bottom;$/;"	m	struct:__anon3::__anon5	file:
+button	.\hooks.c	/^enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};$/;"	g	file:
+ca_ES	.\localization\ca_ES\strings.h	/^struct strings ca_ES = {$/;"	v	typeref:struct:strings
+classname	.\hooks.c	/^  wchar_t *classname;$/;"	m	struct:blacklistitem	file:
+clickpt	.\hooks.c	/^  POINT clickpt;$/;"	m	struct:__anon3	file:
+clicktime	.\hooks.c	/^  unsigned int clicktime;$/;"	m	struct:__anon3	file:
+code	.\localization\strings.h	/^  wchar_t *code;$/;"	m	struct:strings
+ctrl	.\hooks.c	/^  short ctrl;$/;"	m	struct:__anon3	file:
+cursor	.\hooks.c	/^enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};$/;"	g	file:
+cursors	.\hooks.c	/^HCURSOR cursors[6];$/;"	v
+data	.\hooks.c	/^  wchar_t *data;$/;"	m	struct:blacklist	file:
+de_DE	.\localization\de_DE\strings.h	/^struct strings de_DE = {$/;"	v	typeref:struct:strings
+elevated	.\altdrag.c	/^int elevated = 0;$/;"	v
+en_US	.\localization\en_US\strings.h	/^struct strings en_US = {$/;"	v	typeref:struct:strings
+es_ES	.\localization\es_ES\strings.h	/^struct strings es_ES = {$/;"	v	typeref:struct:strings
+fr_FR	.\localization\fr_FR\strings.h	/^struct strings fr_FR = {$/;"	v	typeref:struct:strings
+g_cfgwnd	.\config\config.c	/^HWND g_cfgwnd = NULL;$/;"	v
+g_hinst	.\altdrag.c	/^HINSTANCE g_hinst = NULL;$/;"	v
+g_hinst	.\hookwindows_x64.c	/^HINSTANCE g_hinst = NULL;$/;"	v
+g_hwnd	.\altdrag.c	/^HWND g_hwnd = NULL;$/;"	v
+g_hwnd	.\hooks.c	/^HWND g_hwnd;$/;"	v
+g_hwnd	.\hookwindows_x64.c	/^HWND g_hwnd = NULL;$/;"	v
+general_aero	.\localization\strings.h	/^  wchar_t *general_aero;$/;"	m	struct:strings
+general_autofocus	.\localization\strings.h	/^  wchar_t *general_autofocus;$/;"	m	struct:strings
+general_autosave	.\localization\strings.h	/^  wchar_t *general_autosave;$/;"	m	struct:strings
+general_autosnap	.\localization\strings.h	/^  wchar_t *general_autosnap;$/;"	m	struct:strings
+general_autosnap0	.\localization\strings.h	/^  wchar_t *general_autosnap0;$/;"	m	struct:strings
+general_autosnap1	.\localization\strings.h	/^  wchar_t *general_autosnap1;$/;"	m	struct:strings
+general_autosnap2	.\localization\strings.h	/^  wchar_t *general_autosnap2;$/;"	m	struct:strings
+general_autosnap3	.\localization\strings.h	/^  wchar_t *general_autosnap3;$/;"	m	struct:strings
+general_autostart	.\localization\strings.h	/^  wchar_t *general_autostart;$/;"	m	struct:strings
+general_autostart_box	.\localization\strings.h	/^  wchar_t *general_autostart_box;$/;"	m	struct:strings
+general_autostart_elevate	.\localization\strings.h	/^  wchar_t *general_autostart_elevate;$/;"	m	struct:strings
+general_autostart_elevate_tip	.\localization\strings.h	/^  wchar_t *general_autostart_elevate_tip;$/;"	m	struct:strings
+general_autostart_hide	.\localization\strings.h	/^  wchar_t *general_autostart_hide;$/;"	m	struct:strings
+general_box	.\localization\strings.h	/^  wchar_t *general_box;$/;"	m	struct:strings
+general_elevate	.\localization\strings.h	/^  wchar_t *general_elevate;$/;"	m	struct:strings
+general_elevate_tip	.\localization\strings.h	/^  wchar_t *general_elevate_tip;$/;"	m	struct:strings
+general_elevated	.\localization\strings.h	/^  wchar_t *general_elevated;$/;"	m	struct:strings
+general_elevation_aborted	.\localization\strings.h	/^  wchar_t *general_elevation_aborted;$/;"	m	struct:strings
+general_inactivescroll	.\localization\strings.h	/^  wchar_t *general_inactivescroll;$/;"	m	struct:strings
+general_language	.\localization\strings.h	/^  wchar_t *general_language;$/;"	m	struct:strings
+general_mdi	.\localization\strings.h	/^  wchar_t *general_mdi;$/;"	m	struct:strings
+gl_ES	.\localization\gl_ES\strings.h	/^struct strings gl_ES = {$/;"	v	typeref:struct:strings
+height	.\hooks.c	/^    int height;$/;"	m	struct:__anon3::__anon5	file:
+height	.\hooks.c	/^    int height;$/;"	m	struct:wnddata::__anon1	file:
+height	.\hooks.c	/^  int height;$/;"	m	struct:wnddata	file:
+hide	.\include\tray.c	/^int hide = 0;$/;"	v
+hinstDLL	.\altdrag.c	/^HINSTANCE hinstDLL = NULL;$/;"	v
+hinstDLL	.\hooks.c	/^HINSTANCE hinstDLL = NULL;$/;"	v
+hinstDLL	.\hookwindows_x64.c	/^HINSTANCE hinstDLL = NULL;$/;"	v
+hwnd	.\hooks.c	/^  HWND hwnd;$/;"	m	struct:__anon3	file:
+hwnd	.\hooks.c	/^  HWND hwnd;$/;"	m	struct:wnddata	file:
+hwnds	.\hooks.c	/^HWND *hwnds = NULL;$/;"	v
+hwnds_alloc	.\hooks.c	/^int hwnds_alloc = 0;$/;"	v
+icon	.\include\tray.c	/^HICON icon[2];$/;"	v
+ignorectrl	.\hooks.c	/^  short ignorectrl;$/;"	m	struct:__anon3	file:
+inipath	.\altdrag.c	/^wchar_t inipath[MAX_PATH];$/;"	v
+input_actions_alttab	.\localization\strings.h	/^  wchar_t *input_actions_alttab;$/;"	m	struct:strings
+input_actions_alwaysontop	.\localization\strings.h	/^  wchar_t *input_actions_alwaysontop;$/;"	m	struct:strings
+input_actions_borderless	.\localization\strings.h	/^  wchar_t *input_actions_borderless;$/;"	m	struct:strings
+input_actions_center	.\localization\strings.h	/^  wchar_t *input_actions_center;$/;"	m	struct:strings
+input_actions_close	.\localization\strings.h	/^  wchar_t *input_actions_close;$/;"	m	struct:strings
+input_actions_lower	.\localization\strings.h	/^  wchar_t *input_actions_lower;$/;"	m	struct:strings
+input_actions_minimize	.\localization\strings.h	/^  wchar_t *input_actions_minimize;$/;"	m	struct:strings
+input_actions_move	.\localization\strings.h	/^  wchar_t *input_actions_move;$/;"	m	struct:strings
+input_actions_nothing	.\localization\strings.h	/^  wchar_t *input_actions_nothing;$/;"	m	struct:strings
+input_actions_resize	.\localization\strings.h	/^  wchar_t *input_actions_resize;$/;"	m	struct:strings
+input_actions_transparency	.\localization\strings.h	/^  wchar_t *input_actions_transparency;$/;"	m	struct:strings
+input_actions_volume	.\localization\strings.h	/^  wchar_t *input_actions_volume;$/;"	m	struct:strings
+input_hotkeys_box	.\localization\strings.h	/^  wchar_t *input_hotkeys_box;$/;"	m	struct:strings
+input_hotkeys_leftalt	.\localization\strings.h	/^  wchar_t *input_hotkeys_leftalt;$/;"	m	struct:strings
+input_hotkeys_leftctrl	.\localization\strings.h	/^  wchar_t *input_hotkeys_leftctrl;$/;"	m	struct:strings
+input_hotkeys_leftwinkey	.\localization\strings.h	/^  wchar_t *input_hotkeys_leftwinkey;$/;"	m	struct:strings
+input_hotkeys_more	.\localization\strings.h	/^  wchar_t *input_hotkeys_more;$/;"	m	struct:strings
+input_hotkeys_rightalt	.\localization\strings.h	/^  wchar_t *input_hotkeys_rightalt;$/;"	m	struct:strings
+input_hotkeys_rightctrl	.\localization\strings.h	/^  wchar_t *input_hotkeys_rightctrl;$/;"	m	struct:strings
+input_hotkeys_rightwinkey	.\localization\strings.h	/^  wchar_t *input_hotkeys_rightwinkey;$/;"	m	struct:strings
+input_mouse_box	.\localization\strings.h	/^  wchar_t *input_mouse_box;$/;"	m	struct:strings
+input_mouse_lmb	.\localization\strings.h	/^  wchar_t *input_mouse_lmb;$/;"	m	struct:strings
+input_mouse_lowerwithmmb	.\localization\strings.h	/^  wchar_t *input_mouse_lowerwithmmb;$/;"	m	struct:strings
+input_mouse_mb4	.\localization\strings.h	/^  wchar_t *input_mouse_mb4;$/;"	m	struct:strings
+input_mouse_mb5	.\localization\strings.h	/^  wchar_t *input_mouse_mb5;$/;"	m	struct:strings
+input_mouse_mmb	.\localization\strings.h	/^  wchar_t *input_mouse_mmb;$/;"	m	struct:strings
+input_mouse_rmb	.\localization\strings.h	/^  wchar_t *input_mouse_rmb;$/;"	m	struct:strings
+input_mouse_scroll	.\localization\strings.h	/^  wchar_t *input_mouse_scroll;$/;"	m	struct:strings
+interrupted	.\hooks.c	/^  short interrupted;$/;"	m	struct:__anon3	file:
+it_IT	.\localization\it_IT\strings.h	/^struct strings it_IT = {$/;"	v	typeref:struct:strings
+items	.\hooks.c	/^  struct blacklistitem *items;$/;"	m	struct:blacklist	typeref:struct:blacklist::blacklistitem	file:
+items	.\hooks.c	/^  struct wnddata items[NUMWNDDB];$/;"	m	struct:__anon2	typeref:struct:__anon2::wnddata	file:
+keyhook	.\altdrag.c	/^HHOOK keyhook = NULL;$/;"	v
+keyhook	.\hookwindows_x64.c	/^HHOOK keyhook = NULL;$/;"	v
+keys	.\hooks.c	/^    unsigned char keys[MAXKEYS];$/;"	m	struct:__anon8::__anon10	file:
+ko_KR	.\localization\ko_KR\strings.h	/^struct strings ko_KR = {$/;"	v	typeref:struct:strings
+l10n	.\localization\languages.h	/^struct strings *l10n = &en_US;$/;"	v	typeref:struct:strings
+l10n_ini	.\localization\strings.h	/^struct strings l10n_ini;$/;"	v	typeref:struct:strings
+l10n_mapping	.\localization\strings.h	/^} l10n_mapping[] = {$/;"	v	typeref:struct:__anon13
+lang	.\localization\strings.h	/^  wchar_t *lang;$/;"	m	struct:strings
+lang_english	.\localization\strings.h	/^  wchar_t *lang_english;$/;"	m	struct:strings
+languages	.\localization\languages.h	/^struct strings *languages[] = {$/;"	v	typeref:struct:strings
+languages	.\tools\import_languages.c	/^char *languages[] = {$/;"	v
+last	.\hooks.c	/^  } last;$/;"	m	struct:wnddata	typeref:struct:wnddata::__anon1	file:
+length	.\hooks.c	/^    int length;$/;"	m	struct:__anon8::__anon10	file:
+length	.\hooks.c	/^  int length;$/;"	m	struct:blacklist	file:
+locked	.\hooks.c	/^  short locked;$/;"	m	struct:__anon3	file:
+log_filename	.\include\error.c	/^wchar_t log_filename[1000] = L"";$/;"	v
+main	.\tools\export_l10n_ini.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	.\tools\import_languages.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	.\tools\ini.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	.\tools\unhook.c	/^int main() {$/;"	f
+maximized	.\hooks.c	/^    short maximized;$/;"	m	struct:__anon3::__anon5	file:
+mdiclient	.\hooks.c	/^  HWND mdiclient;$/;"	m	struct:__anon3	file:
+menu_about	.\localization\strings.h	/^  wchar_t *menu_about;$/;"	m	struct:strings
+menu_config	.\localization\strings.h	/^  wchar_t *menu_config;$/;"	m	struct:strings
+menu_disable	.\localization\strings.h	/^  wchar_t *menu_disable;$/;"	m	struct:strings
+menu_enable	.\localization\strings.h	/^  wchar_t *menu_enable;$/;"	m	struct:strings
+menu_exit	.\localization\strings.h	/^  wchar_t *menu_exit;$/;"	m	struct:strings
+menu_hide	.\localization\strings.h	/^  wchar_t *menu_hide;$/;"	m	struct:strings
+menu_update	.\localization\strings.h	/^  wchar_t *menu_update;$/;"	m	struct:strings
+mmi	.\hooks.c	/^  } mmi;$/;"	m	struct:__anon3	typeref:struct:__anon3::__anon6	file:
+monitor	.\hooks.c	/^    HMONITOR monitor;$/;"	m	struct:__anon3::__anon5	file:
+monitors	.\hooks.c	/^RECT *monitors = NULL;$/;"	v
+monitors_alloc	.\hooks.c	/^int monitors_alloc = 0;$/;"	v
+mousehook	.\hooks.c	/^HHOOK mousehook = NULL;$/;"	v
+msghook	.\altdrag.c	/^HHOOK msghook = NULL;$/;"	v
+msghook	.\hookwindows_x64.c	/^HHOOK msghook = NULL;$/;"	v
+my_CLSID_MMDeviceEnumerator	.\hooks.c	/^CLSID my_CLSID_MMDeviceEnumerator = {0xBCDE0395,0xE52F,0x467C,{0x8E,0x3D,0xC4,0x57,0x92,0x91,0x69,0x2E}};$/;"	v
+my_IID_IAudioEndpointVolume	.\hooks.c	/^GUID my_IID_IAudioEndpointVolume = {0x5CDF2C82,0x841E,0x4546,{0x97,0x22,0x0C,0xF7,0x40,0x78,0x22,0x9A}};$/;"	v
+my_IID_IMMDeviceEnumerator	.\hooks.c	/^GUID my_IID_IMMDeviceEnumerator = {0xA95664D2,0x9614,0x4F35,{0xA7,0x46,0xDE,0x8D,0xB6,0x36,0x17,0xE6}};$/;"	v
+name	.\localization\strings.h	/^  wchar_t *name;$/;"	m	struct:__anon13
+numhwnds	.\hooks.c	/^int numhwnds = 0;$/;"	v
+nummonitors	.\hooks.c	/^int nummonitors = 0;$/;"	v
+numwnds	.\hooks.c	/^int numwnds = 0;$/;"	v
+offset	.\hooks.c	/^  POINT offset;$/;"	m	struct:__anon3	file:
+origin	.\hooks.c	/^  } origin;$/;"	m	struct:__anon3	typeref:struct:__anon3::__anon5	file:
+pl_PL	.\localization\pl_PL\strings.h	/^struct strings pl_PL = {$/;"	v	typeref:struct:strings
+pos	.\hooks.c	/^  struct wnddata *pos;$/;"	m	struct:__anon2	typeref:struct:__anon2::wnddata	file:
+prefix32	.\build.bat	/^set prefix32=i686-w64-mingw32-$/;"	v
+prefix64	.\build.bat	/^set prefix64=x86_64-w64-mingw32-$/;"	v
+prevpt	.\hooks.c	/^  POINT prevpt;$/;"	m	struct:__anon3	file:
+progman	.\hooks.c	/^HWND progman = NULL;$/;"	v
+ptMaxTrackSize	.\hooks.c	/^    POINT ptMaxTrackSize;$/;"	m	struct:__anon3::__anon6	file:
+ptMinTrackSize	.\hooks.c	/^    POINT ptMinTrackSize;$/;"	m	struct:__anon3::__anon6	file:
+pt_BR	.\localization\pt_BR\strings.h	/^struct strings pt_BR = {$/;"	v	typeref:struct:strings
+resize	.\hooks.c	/^  } resize;$/;"	m	struct:__anon3	typeref:struct:__anon3::__anon4	file:
+resize	.\hooks.c	/^enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};$/;"	g	file:
+restore	.\hooks.c	/^  short restore;$/;"	m	struct:wnddata	file:
+right	.\hooks.c	/^    int right;$/;"	m	struct:__anon3::__anon5	file:
+ru_RU	.\localization\ru_RU\strings.h	/^struct strings ru_RU = {$/;"	v	typeref:struct:strings
+settings	.\hooks.c	/^} settings = {{NULL,0}, {NULL,0}, {NULL,0}};$/;"	v	typeref:struct:__anon12
+shareattr	.\hooks.c	/^HWND cursorwnd shareattr = NULL;$/;"	v
+shareattr	.\hooks.c	/^enum action msgaction shareattr = ACTION_NONE;$/;"	v	typeref:enum:msgaction
+shareattr	.\hooks.c	/^short sharedsettings_loaded shareattr = 0;$/;"	v
+shareattr	.\hooks.c	/^short unload shareattr = 0;$/;"	v
+shareattr	.\hooks.c	/^wchar_t inipath[MAX_PATH] shareattr;$/;"	v
+shareattr	.\hooks.c	/^} sharedsettings shareattr;$/;"	v	typeref:struct:__anon8
+shareattr	.\hooks.c	/^} sharedstate shareattr = {0, 0, ACTION_NONE};$/;"	v	typeref:struct:__anon7
+shareattr	.\hooks.c	52;"	d	file:
+shift	.\hooks.c	/^  short shift;$/;"	m	struct:__anon7	file:
+showerror	.\include\error.c	/^int showerror = 1;$/;"	v
+sk_SK	.\localization\sk_SK\strings.h	/^struct strings sk_SK = {$/;"	v	typeref:struct:strings
+snap	.\hooks.c	/^  short snap;$/;"	m	struct:__anon7	file:
+state	.\hooks.c	/^} state;$/;"	v	typeref:struct:__anon3
+str	.\localization\strings.h	/^  wchar_t **str;$/;"	m	struct:__anon13
+strings	.\localization\strings.h	/^struct strings {$/;"	s
+style	.\hooks.c	/^  LONG_PTR style; \/\/ original GWL_STYLE for ACTION_BORDERLESS$/;"	m	struct:wnddata	file:
+subclassed	.\hooks.c	/^BOOL subclassed = FALSE;$/;"	v
+tab_about	.\localization\strings.h	/^  wchar_t *tab_about;$/;"	m	struct:strings
+tab_advanced	.\localization\strings.h	/^  wchar_t *tab_advanced;$/;"	m	struct:strings
+tab_blacklist	.\localization\strings.h	/^  wchar_t *tab_blacklist;$/;"	m	struct:strings
+tab_general	.\localization\strings.h	/^  wchar_t *tab_general;$/;"	m	struct:strings
+tab_input	.\localization\strings.h	/^  wchar_t *tab_input;$/;"	m	struct:strings
+title	.\hooks.c	/^  wchar_t *title;$/;"	m	struct:blacklistitem	file:
+title	.\localization\strings.h	/^  wchar_t *title;$/;"	m	struct:strings
+tray	.\include\tray.c	/^NOTIFYICONDATA tray;$/;"	v
+tray_added	.\include\tray.c	/^int tray_added = 0;$/;"	v
+tray_disabled	.\localization\strings.h	/^  wchar_t *tray_disabled;$/;"	m	struct:strings
+tray_enabled	.\localization\strings.h	/^  wchar_t *tray_enabled;$/;"	m	struct:strings
+unhook_error	.\localization\strings.h	/^  wchar_t *unhook_error;$/;"	m	struct:strings
+update	.\include\update.c	/^int update = 0;$/;"	v
+update_balloon	.\localization\strings.h	/^  wchar_t *update_balloon;$/;"	m	struct:strings
+update_dialog	.\localization\strings.h	/^  wchar_t *update_dialog;$/;"	m	struct:strings
+update_nonew	.\localization\strings.h	/^  wchar_t *update_nonew;$/;"	m	struct:strings
+update_urls	.\include\update.c	/^const wchar_t const *update_urls[] = {$/;"	v
+updaterate	.\hooks.c	/^  short updaterate;$/;"	m	struct:__anon3	file:
+vista	.\altdrag.c	/^int vista = 0;$/;"	v
+wcscpy_escape	.\tools\export_l10n_ini.c	/^void wcscpy_escape(wchar_t *dest, wchar_t *source) {$/;"	f
+wcscpy_escape	.\tools\import_languages.c	/^void wcscpy_escape(wchar_t *dest, wchar_t *source) {$/;"	f
+wcscpy_resolve	.\include\localization.c	/^void wcscpy_resolve(wchar_t *dest, wchar_t *source) {$/;"	f
+wcslen_resolved	.\include\localization.c	/^size_t wcslen_resolved(wchar_t *str) {$/;"	f
+width	.\hooks.c	/^    int width;$/;"	m	struct:__anon3::__anon5	file:
+width	.\hooks.c	/^    int width;$/;"	m	struct:wnddata::__anon1	file:
+width	.\hooks.c	/^  int width;$/;"	m	struct:wnddata	file:
+wnddata	.\hooks.c	/^struct wnddata {$/;"	s	file:
+wnddb	.\hooks.c	/^} wnddb;$/;"	v	typeref:struct:__anon2
+wndentry	.\hooks.c	/^  struct wnddata *wndentry;$/;"	m	struct:__anon3	typeref:struct:__anon3::wnddata	file:
+wnds	.\hooks.c	/^RECT *wnds = NULL;$/;"	v
+wnds_alloc	.\hooks.c	/^int wnds_alloc = 0;$/;"	v
+x	.\hooks.c	/^    enum resize x, y;$/;"	m	struct:__anon3::__anon4	typeref:enum:__anon3::__anon4::resize	file:
+x64	.\altdrag.c	/^BOOL x64 = FALSE;$/;"	v
+x64	.\build.bat	/^      set x64=1$/;"	v
+x64	.\build.bat	/^if "%1" == "x64" set x64=1$/;"	v
+x64	.\build.bat	/^if "%2" == "x64" set x64=1$/;"	v
+x64	.\build.bat	/^set x64=0$/;"	v
+y	.\hooks.c	/^    enum resize x, y;$/;"	m	struct:__anon3::__anon4	typeref:enum:__anon3::__anon4::	file:
+zh_CN	.\localization\zh_CN\strings.h	/^struct strings zh_CN = {$/;"	v	typeref:struct:strings
+zh_TW	.\localization\zh_TW\strings.h	/^struct strings zh_TW = {$/;"	v	typeref:struct:strings
