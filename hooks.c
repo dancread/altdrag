@@ -1831,18 +1831,15 @@ __declspec(dllexport) LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wPara
         if (state.wndentry->style == NO_STYLE_SAVED) {
           // Set borderless style and save the original style to window db
           state.wndentry->style = SetWindowLongPtr(state.hwnd, GWL_STYLE, GetWindowLong(state.hwnd, GWL_STYLE) &~(WS_CAPTION|WS_MINIMIZE|WS_MAXIMIZE|WS_SYSMENU));
-          // Force window redraw
-          SetWindowPos(state.hwnd, NULL,NULL,NULL,NULL,NULL,SWP_FRAMECHANGED|SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_NOOWNERZORDER);
-          UpdateWindow(state.hwnd);
         }
         else {
           // Restore the original window style and position
           SetWindowLongPtr(state.hwnd, GWL_STYLE, state.wndentry->style);
           state.wndentry->style = NO_STYLE_SAVED;
-          // Force window redraw
-          SetWindowPos(state.hwnd, NULL,NULL,NULL,NULL,NULL,SWP_FRAMECHANGED|SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_NOOWNERZORDER);
-          UpdateWindow(state.hwnd);
         }
+        // Force window redraw
+        SetWindowPos(state.hwnd, NULL,NULL,NULL,NULL,NULL,SWP_FRAMECHANGED|SWP_NOMOVE|SWP_NOSIZE|SWP_NOZORDER|SWP_NOOWNERZORDER);
+        UpdateWindow(state.hwnd);
       }
       else if (action == ACTION_CLOSE) {
         SendMessage(state.hwnd, WM_CLOSE, 0, 0);
