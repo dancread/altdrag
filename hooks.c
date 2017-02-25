@@ -182,11 +182,46 @@ short unload shareattr = 0;
 #define Error(a,b,c)
 #endif
 
+// From http://blog.syedgakbar.com/2013/01/windows-desktop-listview-handle/
+HWND GetDesktopListViewHWND()
+{
+  HWND hDesktopListView = NULL;
+  HWND hWorkerW = NULL;
+
+  HWND hProgman = FindWindow(L"Progman", 0);
+  HWND hDesktopWnd = GetDesktopWindow();
+
+  // If the main Program Manager window is found
+  if (hProgman)
+  {
+  // Get and load the main List view window containing the icons (found using Spy++).
+    HWND hShellViewWin = FindWindowEx(hProgman, 0, L"SHELLDLL_DefView", 0);
+    if (hShellViewWin)
+      hDesktopListView = FindWindowEx(hShellViewWin, 0, L"SysListView32", 0);
+  else
+    // When this fails (happens in Windows-7 when picture rotation is turned ON), then look for the WorkerW windows list to get the
+    // correct desktop list handle.
+    // As there can be multiple WorkerW windows, so iterate through all to get the correct one
+    do
+    {
+      hWorkerW = FindWindowEx( hDesktopWnd, hWorkerW, L"WorkerW", NULL );
+      hShellViewWin = FindWindowEx(hWorkerW, 0, L"SHELLDLL_DefView", 0);
+    } while (hShellViewWin == NULL && hWorkerW != NULL);
+
+    // Get the ListView control
+    hDesktopListView = FindWindowEx(hShellViewWin, 0, L"SysListView32", 0);
+  }
+
+  return hDesktopListView;
+}
 // Blacklist
 int blacklisted(HWND hwnd, struct blacklist *list) {
   wchar_t title[256]=L"", classname[256]=L"";
   int i;
-
+  // Always black list desktop icons
+  if(hwnd == GetDesktopListViewHWND()){
+    return 1;
+  }
   // Do not check if list is empty
   if (list->length == 0) {
     return 0;
