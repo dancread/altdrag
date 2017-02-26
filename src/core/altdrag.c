@@ -54,14 +54,14 @@ int vista = 0;
 int elevated = 0;
 
 // Include stuff
-#include "localization/strings.h"
-#include "localization/languages.h"
-#include "include/error.c"
-#include "include/localization.c"
-#include "include/languages.c"
-#include "include/tray.c"
-#include "include/update.c"
-#include "config/config.c"
+#include "../../localization/strings.h"
+#include "../../localization/languages.h"
+#include "../core/error.c"
+#include "../lang/localization.c"
+#include "../lang/languages.c"
+#include "../core/tray.c"
+#include "../config/update.c"
+#include "../config/config.c"
 
 // Entry point
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, char *szCmdLine, int iCmdShow) {

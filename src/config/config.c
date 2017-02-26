@@ -27,8 +27,8 @@ HWND g_cfgwnd = NULL;
 LRESULT CALLBACK CursorProc(HWND, UINT, WPARAM, LPARAM);
 
 // Include stuff
-#include "resource.h"
-#include "../include/autostart.c"
+#include "../../resource/resource.h"
+#include "../config/autostart.c"
 
 // Entry point
 void OpenConfig(int startpage) {

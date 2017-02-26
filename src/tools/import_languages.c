@@ -19,9 +19,9 @@
 #define APP_NAME            "AltDrag"
 #define APP_VERSION         "1.0"
 
-#include "../localization/strings.h"
-#include "../localization/en_US/strings.h"
-#include "../include/localization.c"
+#include "../../localization/strings.h"
+#include "../../localization/en_US/strings.h"
+#include "../lang/localization.c"
 
 char *languages[] = {
   "en_US",
