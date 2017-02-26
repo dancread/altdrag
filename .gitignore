@@ -1,8 +1,11 @@
 Thumbs.db
 .DS_Store
 *.swp
-
+.cproject
+.settings
+.project
 bin
 *.dll
 *.exe
+log.txt
 /Translation.ini
