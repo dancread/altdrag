@@ -6,18 +6,16 @@
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
-
+#include "../../src/include/core_globals.h"
 struct strings en_US = {
  /* === translation info === */
  /* code               */ L"en-US",
  /* lang_english       */ L"English",
  /* lang               */ L"English",
  /* author             */ L"Stefan Sundin",
-
  /* === app === */
  /* tray_enabled       */ APP_NAME L"",
  /* tray_disabled      */ APP_NAME L" (disabled)",
-
  /* menu */
  /* enable             */ L"Enable",
  /* disable            */ L"Disable",

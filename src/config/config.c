@@ -6,29 +6,23 @@
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
-
+#include <windows.h>
+#include <stdio.h>
 #include <commctrl.h>
-#include <prsht.h>
+#include <Prsht.h>
 #include <windowsx.h>
 #include <winnt.h>
 #define IDAPPLY 0x3021
 
-// Boring stuff
-BOOL CALLBACK PropSheetProc(HWND, UINT, LPARAM);
-INT_PTR CALLBACK GeneralPageDialogProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK InputPageDialogProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK BlacklistPageDialogProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK AdvancedPageDialogProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK AboutPageDialogProc(HWND, UINT, WPARAM, LPARAM);
-void LinkProc(HWND, UINT, WPARAM, LPARAM);
-HWND g_cfgwnd = NULL;
-
-// Blacklist
-LRESULT CALLBACK CursorProc(HWND, UINT, WPARAM, LPARAM);
 
 // Include stuff
+#include "../include/config.h"
 #include "../../resource/resource.h"
-#include "../config/autostart.c"
+#include "../../localization/strings.h"
+#include "../../localization/languages.h"
+#include "../include/core_globals.h"
+#include "../include/autostart.h"
+#include "../include/update.h"
 
 // Entry point
 void OpenConfig(int startpage) {
@@ -287,7 +281,7 @@ INT_PTR CALLBACK GeneralPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARA
       else {
         MessageBox(NULL, l10n->general_elevation_aborted, APP_NAME, MB_ICONINFORMATION|MB_OK);
       }
-      return;
+      return 0;
     }
     UpdateSettings();
   }
@@ -653,7 +647,7 @@ INT_PTR CALLBACK AdvancedPageDialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPAR
       if (wParam == IDC_HOOKWINDOWS) {
         if (val && MessageBox(NULL, l10n->advanced_hookwindows_warn, APP_NAME, MB_ICONINFORMATION|MB_YESNO|MB_TASKMODAL) == IDNO) {
           Button_SetCheck(GetDlgItem(hwnd,IDC_HOOKWINDOWS), BST_UNCHECKED);
-          return;
+          return 0;
         }
         WritePrivateProfileString(L"Advanced", L"HookWindows", _itow(val,txt,10), inipath);
         UpdateSettings();

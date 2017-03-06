@@ -7,12 +7,13 @@
   (at your option) any later version.
 */
 
-int showerror = 1;
+#include <windows.h>
+#include <shlobj.h>
+#include "../include/error.h"
 
+#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 
 #if defined(DEBUG) || defined(ERROR_WRITETOFILE)
-
-#include <shlobj.h>
 wchar_t log_filename[1000] = L"";
 
 FILE *OpenLog(wchar_t *mode) {
@@ -69,7 +70,7 @@ void _Error(wchar_t *func, wchar_t *info, int errorcode, wchar_t *file, int line
   #else
   // Tip: You can also press Ctrl+C in a MessageBox window to copy the text
   HHOOK hhk = SetWindowsHookEx(WH_CBT, &ErrorMsgProc, 0, GetCurrentThreadId());
-  int response = MessageBox(NULL, msg, APP_NAME" Error", MB_ICONERROR|MB_YESNO|MB_DEFBUTTON2);
+  int response = MessageBox(NULL, msg,L"Error", MB_ICONERROR|MB_YESNO|MB_DEFBUTTON2);
   UnhookWindowsHookEx(hhk);
   if (response == IDYES) {
     // Copy message to clipboard
@@ -85,32 +86,6 @@ void _Error(wchar_t *func, wchar_t *info, int errorcode, wchar_t *file, int line
   #endif
 }
 
-#define Error(a,b,c) _Error(a, b, c, TEXT(__FILE__), __LINE__)
 
 //DBG("%d", 5);
 //DBGA("%d", 5);
-
-#ifdef ERROR_WRITETOFILE
-
-#define DBG(fmt, ...) { \
-  FILE *f = OpenLog(L"ab"); \
-  fwprintf(f, TEXT(fmt), ##__VA_ARGS__); \
-  fputws(L"\n\n", f); \
-  CloseLog(f); \
-}
-
-#else
-
-#define DBG(fmt, ...) { \
-  wchar_t _txt[1000]; \
-  wsprintf(_txt, TEXT(fmt), ##__VA_ARGS__); \
-  MessageBox(NULL, _txt, APP_NAME" Debug", MB_ICONINFORMATION|MB_OK); \
-}
-
-#define DBGA(fmt, ...) { \
-  char _txt[1000]; \
-  sprintf(_txt, fmt, ##__VA_ARGS__); \
-  MessageBoxA(NULL, _txt, "Debug", MB_ICONINFORMATION|MB_OK); \
-}
-
-#endif

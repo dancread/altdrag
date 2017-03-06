@@ -1,17 +1,19 @@
 /*
   Copyright (C) 2015  Stefan Sundin
 
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
-
-NOTIFYICONDATA tray;
-HICON icon[2];
-int tray_added = 0;
-int hide = 0;
-extern int update;
+#include <windows.h>
+#include <Shellapi.h>
+#include "../include/tray.h"
+#include "../include/core_globals.h"
+#include "../../localization/strings.h"
+#include "../../localization/languages.h"
+#include "../include/error.h"
 
 int InitTray() {
   // Load icons

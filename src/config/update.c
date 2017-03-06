@@ -8,6 +8,11 @@
 */
 
 #include <wininet.h>
+#include "../include/update.h"
+#include "../include/core_globals.h"
+#include "../include/error.h"
+#include "../../localization/strings.h"
+#include "../../localization/languages.h"
 
 const wchar_t const *update_urls[] = {
   L"https://update.stefansundin.com/altdrag/latest-stable.txt",
@@ -22,8 +27,6 @@ const wchar_t const *beta_update_urls[] = {
   L"https://stefansundin.com/altdrag-latest-beta.txt",
   L""
 };
-
-int update = 0;
 
 int OpenUrl(wchar_t *url) {
   int ret = (INT_PTR) ShellExecute(NULL, L"open", url, NULL, NULL, SW_SHOWDEFAULT);

@@ -32,7 +32,7 @@ HHOOK keyhook = NULL;
 HHOOK msghook = NULL;
 
 // Include stuff
-#include "../core/error.c"
+#include "../include/error.h"
 
 // Entry point
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, LPSTR szCmdLine, int iCmdShow) {

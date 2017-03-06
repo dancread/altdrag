@@ -12,17 +12,21 @@
 #define _WIN32_WINNT 0x0600
 #define COBJMACROS
 
+#include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <windows.h>
 #include <shlwapi.h>
 #include <commctrl.h>
 #include <psapi.h>
 #include <mmdeviceapi.h>
 #include <endpointvolume.h>
-#include "../include/enum.h"
+#include "../include/dll_globals.h"
+#include "../include/dll_utils.h"
+#include "../include/winenum.h"
+#include "../include/error.h"
+
 // Stuff missing in MinGW
 CLSID my_CLSID_MMDeviceEnumerator = {0xBCDE0395,0xE52F,0x467C,{0x8E,0x3D,0xC4,0x57,0x92,0x91,0x69,0x2E}};
 GUID my_IID_IMMDeviceEnumerator = {0xA95664D2,0x9614,0x4F35,{0xA7,0x46,0xDE,0x8D,0xB6,0x36,0x17,0xE6}};
@@ -33,133 +37,16 @@ GUID my_IID_IAudioEndpointVolume = {0x5CDF2C82,0x841E,0x4546,{0x97,0x22,0x0C,0xF
 #define AERO_THRESHOLD 5
 
 // Boring stuff
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 #define RESTORE_TIMER WM_APP+1
 #define MOVE_TIMER    WM_APP+2
 #define REHOOK_TIMER  WM_APP+3
 #define INIT_TIMER    WM_APP+4
 #define FOCUS_TIMER   WM_APP+5
+
+/* Globals */
 HWND g_hwnd;
-
-// Enumerators
-enum action {ACTION_NONE=0, ACTION_MOVE, ACTION_RESIZE, ACTION_MINIMIZE, ACTION_CENTER, ACTION_ALWAYSONTOP, ACTION_CLOSE, ACTION_LOWER, ACTION_ALTTAB, ACTION_VOLUME, ACTION_TRANSPARENCY};
-enum button {BUTTON_NONE=0, BUTTON_LMB, BUTTON_MMB, BUTTON_RMB, BUTTON_MB4, BUTTON_MB5};
-enum resize {RESIZE_NONE=0, RESIZE_TOP, RESIZE_RIGHT, RESIZE_BOTTOM, RESIZE_LEFT, RESIZE_CENTER};
-enum cursor {HAND, SIZENWSE, SIZENESW, SIZENS, SIZEWE, SIZEALL};
-
-// Some variables must be shared so that CallWndProc hooks can access them
-#define shareattr __attribute__((section ("shared"), shared))
-
-// Window database
-#define NUMWNDDB 30
-struct wnddata {
-  HWND hwnd;
-  short restore;
-  int width;
-  int height;
-  struct {
-    int width;
-    int height;
-  } last;
-};
-struct {
-  struct wnddata items[NUMWNDDB];
-  struct wnddata *pos;
-} wnddb;
-
-// State
-struct {
-  HWND hwnd;
-  HWND mdiclient;
-  short alt;
-  short activated; // Keep track on if an action has begun since the hotkey was depressed, in order to successfully block Alt from triggering a menu
-  short ctrl;
-  short interrupted;
-  short updaterate;
-  unsigned int clicktime;
-  POINT clickpt;
-  POINT prevpt;
-  POINT offset;
-  struct {
-    enum resize x, y;
-  } resize;
-  short blockaltup;
-  short blockmouseup;
-  short ignorectrl;
-  short locked;
-  struct wnddata *wndentry;
-  struct {
-    HMONITOR monitor;
-    short maximized;
-    int width;
-    int height;
-    int right;
-    int bottom;
-  } origin;
-  struct {
-    POINT ptMinTrackSize;
-    POINT ptMaxTrackSize;
-  } mmi;
-} state;
-
-struct {
-  short shift;
-  short snap;
-  enum action action;
-} sharedstate shareattr = {0, 0, ACTION_NONE};
-
-// Snap
-RECT *monitors = NULL;
-int nummonitors = 0;
-RECT *wnds = NULL;
-int numwnds = 0;
-HWND *hwnds = NULL;
-int numhwnds = 0;
-HWND progman = NULL;
-
-// Settings
-#define MAXKEYS 10
-struct {
-  int AutoFocus;
-  int AutoSnap;
-  int AutoRemaximize;
-  int Aero;
-  int MDI;
-  int InactiveScroll;
-  int LowerWithMMB;
-  int SnapThreshold;
-  int FocusOnTyping;
-  struct {
-    int Cursor;
-    int MoveRate;
-    int ResizeRate;
-  } Performance;
-  struct {
-    unsigned char keys[MAXKEYS];
-    int length;
-  } Hotkeys;
-  struct {
-    enum action LMB, MMB, RMB, MB4, MB5, Scroll;
-  } Mouse;
-} sharedsettings shareattr;
 short sharedsettings_loaded shareattr = 0;
 wchar_t inipath[MAX_PATH] shareattr;
-
-// Blacklist (not shared since dynamically allocated)
-struct blacklistitem {
-  wchar_t *title;
-  wchar_t *classname;
-};
-struct blacklist {
-  struct blacklistitem *items;
-  int length;
-  wchar_t *data;
-};
-struct {
-  struct blacklist ProcessBlacklist;
-  struct blacklist Blacklist;
-  struct blacklist Snaplist;
-} settings = {{NULL,0}, {NULL,0}, {NULL,0}};
 
 // Cursor data
 HWND cursorwnd shareattr = NULL;
@@ -174,218 +61,24 @@ BOOL subclassed = FALSE;
 enum action msgaction shareattr = ACTION_NONE;
 short unload shareattr = 0;
 
-// Error()
-#ifdef DEBUG
-#define ERROR_WRITETOFILE
-#include "include/error.c"
-#else
-#define Error(a,b,c)
-#endif
-
-// Blacklist
-int blacklisted(HWND hwnd, struct blacklist *list) {
-  wchar_t title[256]=L"", classname[256]=L"";
-  int i;
-
-  // Do not check if list is empty
-  if (list->length == 0) {
-    return 0;
-  }
-
-  // ProcessBlacklist is case-insensitive
-  if (list == &settings.ProcessBlacklist) {
-    DWORD pid;
-    GetWindowThreadProcessId(hwnd, &pid);
-    HANDLE proc = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pid);
-    GetProcessImageFileName(proc, title, ARRAY_SIZE(title));
-    CloseHandle(proc);
-    PathStripPath(title);
-    for (i=0; i < list->length; i++) {
-      if (!wcsicmp(title,list->items[i].title)) {
-        return 1;
-      }
-    }
-    return 0;
-  }
-
-  GetWindowText(hwnd, title, ARRAY_SIZE(title));
-  GetClassName(hwnd, classname, ARRAY_SIZE(classname));
-  for (i=0; i < list->length; i++) {
-    if ((list->items[i].title == NULL && !wcscmp(classname,list->items[i].classname))
-     || (list->items[i].classname == NULL && !wcscmp(title,list->items[i].title))
-     || (list->items[i].title != NULL && list->items[i].classname != NULL && !wcscmp(title,list->items[i].title) && !wcscmp(classname,list->items[i].classname))) {
-      return 1;
-    }
-  }
-  return 0;
-}
-
+int numwnds = 0;
 // Enumerate
 int monitors_alloc = 0;
-BOOL CALLBACK EnumMonitorsProc(HMONITOR hMonitor, HDC hdcMonitor, LPRECT lprcMonitor, LPARAM dwData) {
-  // Make sure we have enough space allocated
-  if (nummonitors == monitors_alloc) {
-    monitors_alloc++;
-    monitors = realloc(monitors, monitors_alloc*sizeof(RECT));
-  }
-  // Add monitor
-  monitors[nummonitors++] = *lprcMonitor;
-  return TRUE;
-}
-
 int wnds_alloc = 0;
-BOOL CALLBACK EnumWindowsProc(HWND window, LPARAM lParam) {
-  // Make sure we have enough space allocated
-  if (numwnds == wnds_alloc) {
-    wnds_alloc += 20;
-    wnds = realloc(wnds, wnds_alloc*sizeof(RECT));
-  }
-
-  // Only store window if it's visible, not minimized to taskbar, not the window we are dragging and not blacklisted
-  RECT wnd;
-  LONG_PTR style;
-  if (window != state.hwnd && window != progman
-   && IsWindowVisible(window) && !IsIconic(window)
-   && (((style=GetWindowLongPtr(window,GWL_STYLE))&WS_CAPTION) == WS_CAPTION || blacklisted(window,&settings.Snaplist))
-   && GetWindowRect(window,&wnd) != 0
-  ) {
-    // Maximized?
-    if (IsZoomed(window)) {
-      // Get monitor size
-      HMONITOR monitor = MonitorFromWindow(window, MONITOR_DEFAULTTONEAREST);
-      MONITORINFO mi = { sizeof(MONITORINFO) };
-      GetMonitorInfo(monitor, &mi);
-      // Crop this window so that it does not exceed the size of the monitor
-      // This is done because when maximized, windows have an extra, invisible, border (a border that stretches onto other monitors)
-      wnd.left = max(wnd.left, mi.rcMonitor.left);
-      wnd.top = max(wnd.top, mi.rcMonitor.top);
-      wnd.right = min(wnd.right, mi.rcMonitor.right);
-      wnd.bottom = min(wnd.bottom, mi.rcMonitor.bottom);
-    }
-
-    // Return if this window is overlapped by another window
-    int i;
-    for (i=0; i < numwnds; i++) {
-      if (wnd.left >= wnds[i].left && wnd.top >= wnds[i].top && wnd.right <= wnds[i].right && wnd.bottom <= wnds[i].bottom) {
-        return TRUE;
-      }
-    }
-
-    // Add window
-    wnds[numwnds++] = wnd;
-
-    // Use this to print the title and classname of the windows that are snapable
-    /*
-    FILE *f = OpenLog(L"ab");
-    wchar_t title[100], classname[100];
-    GetWindowText(window, title, ARRAY_SIZE(title));
-    GetClassName(window, classname, ARRAY_SIZE(classname));
-    fwprintf(f, L"window: %s|%s\n", title, classname);
-    CloseLog(f);
-    */
-  }
-  return TRUE;
-}
-
 int hwnds_alloc = 0;
-BOOL CALLBACK EnumAltTabWindows(HWND window, LPARAM lParam) {
-  // Make sure we have enough space allocated
-  if (numhwnds == hwnds_alloc) {
-    hwnds_alloc += 20;
-    hwnds = realloc(hwnds, hwnds_alloc*sizeof(HWND));
-  }
 
-  // Only store window if it's visible, not minimized to taskbar and on the same monitor as the cursor
-  if (IsWindowVisible(window) && !IsIconic(window)
-   && (GetWindowLongPtr(window,GWL_STYLE)&WS_CAPTION) == WS_CAPTION
-   && state.origin.monitor == MonitorFromWindow(window,MONITOR_DEFAULTTONULL)
-  ) {
-    hwnds[numhwnds++] = window;
-  }
-  return TRUE;
-}
+int nummonitors = 0;
+// Snap
+RECT *monitors = NULL;
+RECT *wnds = NULL;
 
-void EnumMdi() {
-  // Add MDIClient as the monitor
-  RECT wnd;
-  if (GetClientRect(state.mdiclient,&wnd) != 0) {
-    monitors[nummonitors++] = wnd;
-  }
-  if (sharedstate.snap < 2) {
-    return;
-  }
-
-  // Add all the siblings to the window
-  POINT mdiclientpt = {0,0};
-  if (ClientToScreen(state.mdiclient,&mdiclientpt) == FALSE) {
-    return;
-  }
-  HWND window = GetWindow(state.mdiclient, GW_CHILD);
-  while (window != NULL) {
-    if (window == state.hwnd) {
-      window = GetWindow(window, GW_HWNDNEXT);
-      continue;
-    }
-    if (numwnds == wnds_alloc) {
-      wnds_alloc += 20;
-      wnds = realloc(wnds, wnds_alloc*sizeof(RECT));
-    }
-    if (GetWindowRect(window,&wnd) != 0) {
-      wnds[numwnds++] = (RECT) { wnd.left-mdiclientpt.x, wnd.top-mdiclientpt.y, wnd.right-mdiclientpt.x, wnd.bottom-mdiclientpt.y };
-    }
-    window = GetWindow(window, GW_HWNDNEXT);
-  }
-}
-
-void Enum() {
-  nummonitors = 0;
-  numwnds = 0;
-
-  // MDI
-  if (state.mdiclient) {
-    EnumMdi();
-    return;
-  }
-
-  // Update handle to progman
-  if (!IsWindow(progman)) {
-    progman = FindWindow(L"Progman", L"Program Manager");
-  }
-
-  // Enumerate monitors
-  EnumDisplayMonitors(NULL, NULL, EnumMonitorsProc, 0);
-
-  // Enumerate windows
-  HWND taskbar = FindWindow(L"Shell_TrayWnd", NULL);
-  RECT wnd;
-  if (taskbar != NULL && GetWindowRect(taskbar,&wnd) != 0) {
-    wnds[numwnds++] = wnd;
-  }
-  if (sharedstate.snap >= 2) {
-    EnumWindows(EnumWindowsProc, 0);
-  }
-
-  // Use this to print the monitors and windows
-  /*
-  FILE *f = OpenLog(L"ab");
-  fwprintf(f, L"nummonitors: %d\n", nummonitors);
-  int k;
-  for (k=0; k < nummonitors; k++) {
-    fwprintf(f, L"mon #%02d: left %d, top %d, right %d, bottom %d\n", k, monitors[k].left, monitors[k].top, monitors[k].right, monitors[k].bottom);
-  }
-  fwprintf(f, L"numwnds: %d\n", numwnds);
-  for (k=0; k < numwnds; k++) {
-    fwprintf(f, L"wnd #%02d: %dx%d @ %dx%d\n", k, wnds[k].right-wnds[k].left, wnds[k].bottom-wnds[k].top, wnds[k].left, wnds[k].top);
-  }
-  fwprintf(f, L"\n");
-  CloseLog(f);
-  */
-}
+HWND *hwnds = NULL;
+int numhwnds = 0;
+HWND progman = NULL;
 
 void MoveSnap(int *posx, int *posy, int wndwidth, int wndheight) {
   // Enumerate monitors and windows
   Enum();
-
   // thresholdx and thresholdy will shrink to make sure the dragged window will snap to the closest windows
   int i, j, thresholdx, thresholdy, stuckx=0, stucky=0, stickx=0, sticky=0;
   thresholdx = thresholdy = sharedsettings.SnapThreshold;
