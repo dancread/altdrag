@@ -44,6 +44,9 @@ GUID my_IID_IAudioEndpointVolume = {0x5CDF2C82,0x841E,0x4546,{0x97,0x22,0x0C,0xF
 #define FOCUS_TIMER   WM_APP+5
 
 /* Globals */
+struct sharedsettings_t sharedsettings;
+struct settings_t settings = {{NULL,0}, {NULL,0}, {NULL,0}};
+struct sharedstate_t sharedstate = {0, 0, ACTION_NONE};
 HWND g_hwnd;
 short sharedsettings_loaded shareattr = 0;
 wchar_t inipath[MAX_PATH] shareattr;

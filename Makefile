@@ -25,12 +25,13 @@ dll:
 	#$(CC) -o dll/dll_utils.o src/dll/dll_utils.c $(DLL_LIBS)
 	#$(CC) -o dll/winenum.o dll/dll_utils.o src/dll/winenum.c $(DLL_LIBS)
 	#$(CC) -o dll/hooks.dll src/dll/hooks.c dll/winenum.o dll/error.o dll/hooks.o dll/dll_utils.o $(DLL_LIBS)
-	$(CC) -o dll/hooks.dll dll/hooks.o src/dll/hooks.c src/core/error.c src/dll/dll_utils.c $(DLL_LIBS) -g
+	$(CC) -o dll/hooks.dll dll/hooks.o src/dll/hooks.c src/dll/winenum.c src/core/error.c src/dll/dll_utils.c $(DLL_LIBS) -g
 exec:
 	mkdir -p bin
 	$(RES_C) resource/altdrag.rc bin/altdrag.o
-	$(CC) -o bin/autostart.o src/config/autostart.c
-	$(CC) -w -o bin/AltDrag.exe bin/*.o -mwindows $(LIBS)
+	#$(CC) -o bin/autostart.o src/config/autostart.c
+	#$(CC) -o bin/error.o  src/core/error.c
+	$(CC) -w -o bin/AltDrag.exe bin/altdrag.o src/core/error.c src/config/autostart.c src/core/altdrag.c src/lang/languages.c -mwindows $(LIBS)
 tools:
 	mkdir -p bin
 	i686-w64-mingw32-gcc -o bin/unhook.exe src/tools/unhook.c

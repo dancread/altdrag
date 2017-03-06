@@ -34,6 +34,30 @@ LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 #include "../include/update.h"
 #include "../include/config.h"
 
+// Globals
+int tray_added = 0;
+int hide = 0;
+NOTIFYICONDATA tray;
+HICON icon[2];
+extern int update;
+HINSTANCE g_hinst = NULL;
+HWND g_hwnd = NULL;
+UINT WM_TASKBARCREATED = 0;
+UINT WM_UPDATESETTINGS = 0;
+UINT WM_ADDTRAY = 0;
+UINT WM_HIDETRAY = 0;
+UINT WM_OPENCONFIG = 0;
+UINT WM_CLOSECONFIG = 0;
+wchar_t inipath[MAX_PATH];
+
+HWND g_cfgwnd = NULL;
+// Cool stuff
+HINSTANCE hinstDLL = NULL;
+HHOOK keyhook = NULL;
+HHOOK msghook = NULL;
+BOOL x64 = FALSE;
+int vista = 0;
+int elevated = 0;
 // Entry point
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, char *szCmdLine, int iCmdShow) {
   g_hinst = hInst;

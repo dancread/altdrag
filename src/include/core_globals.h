@@ -22,28 +22,29 @@
 #define SWM_ABOUT              WM_APP+5
 #define SWM_EXIT               WM_APP+6
 // Globals
-int tray_added = 0;
-int hide = 0;
-NOTIFYICONDATA tray;
-HICON icon[2];
+extern int tray_added;
+extern int hide;
+extern NOTIFYICONDATA tray;
+extern HICON icon[2];
 extern int update;
-HINSTANCE g_hinst = NULL;
-HWND g_hwnd = NULL;
-UINT WM_TASKBARCREATED = 0;
-UINT WM_UPDATESETTINGS = 0;
-UINT WM_ADDTRAY = 0;
-UINT WM_HIDETRAY = 0;
-UINT WM_OPENCONFIG = 0;
-UINT WM_CLOSECONFIG = 0;
-wchar_t inipath[MAX_PATH];
+extern HINSTANCE g_hinst;
+extern HWND g_hwnd;
+extern UINT WM_TASKBARCREATED;
+extern UINT WM_UPDATESETTINGS;
+extern UINT WM_ADDTRAY;
+extern UINT WM_HIDETRAY;
+extern UINT WM_OPENCONFIG;
+extern UINT WM_CLOSECONFIG;
+extern wchar_t inipath[MAX_PATH];
 
-HWND g_cfgwnd = NULL;
+extern HWND g_cfgwnd;
 // Cool stuff
-HINSTANCE hinstDLL = NULL;
-HHOOK keyhook = NULL;
-HHOOK msghook = NULL;
-BOOL x64 = FALSE;
-int vista = 0;
-int elevated = 0;
+extern HINSTANCE hinstDLL;
+extern HHOOK keyhook;
+extern HHOOK msghook;
+extern BOOL x64;
+extern int vista;
+extern int elevated;
+
 
 #endif /* SRC_INCLUDE_CORE_GLOBALS_H_ */

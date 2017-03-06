@@ -73,15 +73,26 @@ struct {
   } mmi;
 } state;
 
-struct {
+struct sharedstate_t {
   short shift;
   short snap;
   enum action action;
-} sharedstate shareattr = {0, 0, ACTION_NONE};
+} shareattr;
 
+// Blacklist (not shared since dynamically allocated)
+struct blacklistitem {
+  wchar_t *title;
+  wchar_t *classname;
+};
+
+struct blacklist {
+  struct blacklistitem *items;
+  int length;
+  wchar_t *data;
+};
 // Settings
 #define MAXKEYS 10
-struct {
+struct sharedsettings_t {
   int AutoFocus;
   int AutoSnap;
   int AutoRemaximize;
@@ -103,25 +114,18 @@ struct {
   struct {
     enum action LMB, MMB, RMB, MB4, MB5, Scroll;
   } Mouse;
-} sharedsettings shareattr;
-
-// Blacklist (not shared since dynamically allocated)
-struct blacklistitem {
-  wchar_t *title;
-  wchar_t *classname;
-};
-
-struct blacklist {
-  struct blacklistitem *items;
-  int length;
-  wchar_t *data;
-};
-struct {
+} shareattr;
+struct settings_t {
   struct blacklist ProcessBlacklist;
   struct blacklist Blacklist;
   struct blacklist Snaplist;
-} settings = {{NULL,0}, {NULL,0}, {NULL,0}};
+};
+
+
 /* Global externs */
+extern struct sharedsettings_t sharedsettings;
+extern struct settings_t settings;
+extern struct sharedstate_t sharedstate;
 extern HWND g_hwnd;
 extern short sharedsettings_loaded shareattr;
 extern wchar_t inipath[MAX_PATH] shareattr;
