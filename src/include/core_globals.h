@@ -8,6 +8,7 @@
 #ifndef SRC_INCLUDE_CORE_GLOBALS_H_
 #define SRC_INCLUDE_CORE_GLOBALS_H_
 #include <windows.h>
+#include "../../localization/strings.h"
 // Definitions
 #define APP_NAME            L"AltDrag"
 #define APP_VERSION         L"1.1"
@@ -21,6 +22,8 @@
 #define SWM_CONFIG             WM_APP+4
 #define SWM_ABOUT              WM_APP+5
 #define SWM_EXIT               WM_APP+6
+// Utils
+#define ENABLED() (keyhook || msghook)
 // Globals
 extern int tray_added;
 extern int hide;
@@ -45,6 +48,10 @@ extern HHOOK msghook;
 extern BOOL x64;
 extern int vista;
 extern int elevated;
-
+// Lang
+extern struct strings *languages[1]; //FIXME: Terrible idea
+extern struct strings *l10n;
+extern struct strings en_US;
+extern struct l10n_mapping_t l10n_mapping[92];  //FIXME: Terrible idea
 
 #endif /* SRC_INCLUDE_CORE_GLOBALS_H_ */

@@ -6,9 +6,12 @@
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
-#include "../include/autostart.h"
+
+#include "../../localization/strings.h"
+#include "../../localization/languages.h"
 #include "../include/core_globals.h"
 #include "../include/error.h"
+#include "../include/autostart.h"
 // No error reporting since we don't want the user to be interrupted
 void CheckAutostart(int *on, int *hidden, int *elevated) {
   *on = *hidden = *elevated = 0;

@@ -6,10 +6,12 @@
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
+#include <shlwapi.h>
 #include <stdio.h>
-#include "../include/core_globals.h"
-#include "../../localization/languages.h"
 #include "../../localization/strings.h"
+#include "../../localization/languages.h"
+#include "../include/core_globals.h"
+#include "../include/languages.h"
 void UpdateLanguage() {
   wchar_t path[MAX_PATH];
   GetModuleFileName(NULL, path, ARRAY_SIZE(path));

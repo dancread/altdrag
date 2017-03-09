@@ -7,12 +7,14 @@
   (at your option) any later version.
 */
 
+#include <windows.h>
+#include <shlwapi.h>
 #include <wininet.h>
-#include "../include/update.h"
-#include "../include/core_globals.h"
-#include "../include/error.h"
 #include "../../localization/strings.h"
 #include "../../localization/languages.h"
+#include "../include/core_globals.h"
+#include "../include/error.h"
+#include "../include/update.h"
 
 const wchar_t const *update_urls[] = {
   L"https://update.stefansundin.com/altdrag/latest-stable.txt",

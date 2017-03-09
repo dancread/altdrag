@@ -29,7 +29,6 @@ LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 #include "../include/core_globals.h"
 #include "../include/error.h"
 #include "../include/localization.h"
-#include "../include/languages.h"
 #include "../include/tray.h"
 #include "../include/update.h"
 #include "../include/config.h"
@@ -49,7 +48,7 @@ UINT WM_HIDETRAY = 0;
 UINT WM_OPENCONFIG = 0;
 UINT WM_CLOSECONFIG = 0;
 wchar_t inipath[MAX_PATH];
-
+struct l10n_mapping_t l10n_mapping[92]; // FIXME: Don't do this
 HWND g_cfgwnd = NULL;
 // Cool stuff
 HINSTANCE hinstDLL = NULL;

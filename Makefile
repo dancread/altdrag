@@ -31,7 +31,7 @@ exec:
 	$(RES_C) resource/altdrag.rc bin/altdrag.o
 	#$(CC) -o bin/autostart.o src/config/autostart.c
 	#$(CC) -o bin/error.o  src/core/error.c
-	$(CC) -w -o bin/AltDrag.exe bin/altdrag.o src/core/error.c src/config/autostart.c src/core/altdrag.c src/lang/languages.c -mwindows $(LIBS)
+	$(CC) -w -o bin/AltDrag.exe bin/altdrag.o src/core/altdrag.c src/core/tray.c src/core/error.c src/config/config.c src/config/autostart.c src/config/update.c src/lang/languages.c src/lang/localization.c -mwindows $(LIBS)
 tools:
 	mkdir -p bin
 	i686-w64-mingw32-gcc -o bin/unhook.exe src/tools/unhook.c

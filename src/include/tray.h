@@ -7,7 +7,6 @@
 
 #ifndef SRC_INCLUDE_TRAY_H_
 #define SRC_INCLUDE_TRAY_H_
-#include <windows.h>
 
 // Prototypes
 int InitTray();

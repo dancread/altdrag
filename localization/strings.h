@@ -6,7 +6,9 @@
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 */
-
+#ifndef SRC_STRINGS_H_
+#define SRC_STRINGS_H_
+#include <windows.h>
 struct strings {
   wchar_t *code;
   wchar_t *lang_english;
@@ -127,7 +129,7 @@ struct strings {
 
 struct strings l10n_ini;
 
-struct {
+struct l10n_mapping_t {
   wchar_t **str;
   wchar_t *name;
 } l10n_mapping[] = {
@@ -234,3 +236,4 @@ struct {
 
   { &l10n_ini.unhook_error,                            L"MiscUnhookError" },
 };
+#endif /* SRC_STRINGS_H_ */

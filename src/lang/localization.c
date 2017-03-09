@@ -9,9 +9,10 @@
 
 #include <stddef.h>
 #include <stdlib.h>
-#include "../include/localization.h"
-#include "../../localization/languages.h"
 #include "../../localization/strings.h"
+#include "../../localization/languages.h"
+#include "../include/core_globals.h"
+#include "../include/languages.h"
 size_t wcslen_resolved(wchar_t *str) {
   // Return the length of str, having resolved escape sequences
   wchar_t *ptr;
