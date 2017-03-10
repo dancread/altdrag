@@ -10,7 +10,7 @@
 #include <windows.h>
 
 // Globals
-int update = 0;
+extern int update;
 // Prototypes
 int OpenUrl(wchar_t *url);
 DWORD WINAPI _CheckForUpdate(LPVOID arg);

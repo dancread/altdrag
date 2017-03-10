@@ -2,8 +2,8 @@
 #ifndef SRC_LANGUAGES_H_
 #define SRC_LANGUAGES_H_
 #include "strings.h"
-#include "en_US/strings.h"
 /*
+#include "en_US/strings.h"
 #include "fr_FR/strings.h"
 #include "pl_PL/strings.h"
 #include "pt_BR/strings.h"
@@ -19,9 +19,10 @@
 #include "ko_KR/strings.h"
 */
 
+/*
 struct strings *languages[] = {
   &en_US,
-/*  &fr_FR,
+  &fr_FR,
   &pl_PL,
   &pt_BR,
   &sk_SK,
@@ -33,7 +34,11 @@ struct strings *languages[] = {
   &es_ES,
   &gl_ES,
   &ca_ES,
-  &ko_KR,*/
+  &ko_KR,
 };
+*/
+
+extern struct strings *languages[1];
+extern struct strings en_US;
 
 #endif /* SRC_LANGUAGES_H_ */
