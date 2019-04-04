@@ -49,7 +49,7 @@ void LoadTranslation(wchar_t *ini) {
     GetPrivateProfileString(L"Translation", l10n_mapping[i].name, def, txt, ARRAY_SIZE(txt), ini);
     if (l10n_mapping[i].str == &l10n_ini.about_version) {
       wcscat(txt, L" ");
-      wcscat(txt, TEXT(APP_VERSION));
+      wcscat(txt, APP_VERSION);
     }
     *l10n_mapping[i].str = realloc(*l10n_mapping[i].str, (wcslen_resolved(txt)+1)*sizeof(wchar_t));
     wcscpy_resolve(*l10n_mapping[i].str, txt);

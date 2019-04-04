@@ -184,7 +184,7 @@ int elevated = 0;
 // Entry point
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, char *szCmdLine, int iCmdShow) {
   g_hinst = hInst;
-  IsWow64Process(GetCurrentProcess(), &x64);
+  //IsWow64Process(GetCurrentProcess(), &x64);
 
   // Get ini path
   GetModuleFileName(NULL, inipath, ARRAY_SIZE(inipath));
